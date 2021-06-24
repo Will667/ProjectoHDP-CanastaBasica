@@ -8,6 +8,7 @@ urlpatterns = [
     path('login', views.login, name="login"), #login
     path('test', views.test, name="test"), #depurar
     path('graficas', views.graficas, name="graficas"),
+    path('tablas', views.tablas, name="tablas"),
     # path('base', views.base, name="base"),
 
 ]

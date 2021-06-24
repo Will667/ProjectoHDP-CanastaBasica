@@ -14,5 +14,8 @@ def graficas(request):
 def test(request):
     return render(request, "core/test.html")
 
+def tablas(request):
+    return render(request, "core/tablas.html")    
+
 # def base(request):
 #     return render(request, "core/base.html")

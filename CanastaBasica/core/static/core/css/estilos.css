@@ -332,9 +332,8 @@ html {
 /*Estilos para la tabla*/
 
 .tg-wrap {
-    overflow-y: scroll;
-    height: 360px;
-    width: 870px;
+    height: 80%;
+    width: 60%;
     position: relative;
     margin: 0px auto;
     margin-top: 5px;
