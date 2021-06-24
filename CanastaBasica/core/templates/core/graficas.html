@@ -1,0 +1,184 @@
+{% extends 'core/base.html' %} {% load static %} {% block content %}
+
+<head>
+    <meta charset="utf-8" />
+    <title>Inicio de secion</title>
+    <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}" media="screen" title="no title" charset="utf-8" />
+    <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}" />
+    <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}" />
+</head>
+
+<body>
+    <br />
+    <div class="main-content">
+        {% block obtener %}
+        <div class="obtener">
+            <figcaption id="legenda">Obtener informacion</figcaption>
+            <br />
+            <nav class="menu2">
+                <select class="obd" name="Anio">
+                    <option value="option">2015</option>
+                    <option value="option">2014</option>
+                </select>
+                <select class="obd" name="Sexo">
+                    <option value="option">Mujer</option>
+                    <option value="option">Hombre</option>
+                </select>
+                <select class="obd" name="Mes">
+                    <option value="option">Enero</option>
+                    <option value="option">Febrero</option>
+                    <option value="option">Marzo</option>
+                    <option value="option">Abril</option>
+                    <option value="option">Mayo</option>
+                    <option value="option">Junio</option>
+                    <option value="option">Julio</option>
+                    <option value="option">Agosto</option>
+                    <option value="option">Septiembre</option>
+                    <option value="option">Octubre</option>
+                    <option value="option">Noviembre</option>
+                    <option value="option">Diciembre</option>
+                </select>
+                <a href="#" class="myButton">Generar Reporte</a>
+            </nav>
+        </div>
+        {% endblock %} {% block table %}
+        <div class="tg-wrap">
+            <table class="tg">
+                <tr>
+                    <th class="tg-yw4l">N°</th>
+                    <th class="tg-yw4l">Grupo de causas</th>
+                    <th class="tg-yw4l">Masculino</th>
+                    <th class="tg-yw4l">Femenino</th>
+                    <th class="tg-baqh">Indeterminado<br />(A partir del 2013)</th>
+                    <th class="tg-yw4l">Total</th>
+                </tr>
+                <tr>
+                    <td class="tg-6k2t">1</td>
+                    <td class="tg-6k2t">Insuficiencia renal cronica</td>
+                    <td class="tg-j0tj">31</td>
+                    <td class="tg-j0tj">16</td>
+                    <td class="tg-j0tj">0</td>
+                    <td class="tg-j0tj">47</td>
+                </tr>
+                <tr>
+                    <td class="tg-yw4l">2</td>
+                    <td class="tg-yw4l">Septicemia, no especificada</td>
+                    <td class="tg-baqh">19</td>
+                    <td class="tg-baqh">25</td>
+                    <td class="tg-baqh">0</td>
+                    <td class="tg-baqh">44</td>
+                </tr>
+                <tr>
+                    <td class="tg-6k2t">3</td>
+                    <td class="tg-6k2t">Diabetes mellitus no insulinodependiente</td>
+                    <td class="tg-j0tj">12</td>
+                    <td class="tg-j0tj">22</td>
+                    <td class="tg-j0tj">0</td>
+                    <td class="tg-j0tj">34</td>
+                </tr>
+                <tr>
+                    <td class="tg-yw4l">4</td>
+                    <td class="tg-yw4l">Hipertención esencial (primaria)</td>
+                    <td class="tg-baqh">13</td>
+                    <td class="tg-baqh">20</td>
+                    <td class="tg-baqh">0</td>
+                    <td class="tg-baqh">33</td>
+                </tr>
+                <tr>
+                    <td class="tg-6k2t">5</td>
+                    <td class="tg-6k2t">Neumonia, no especificada</td>
+                    <td class="tg-j0tj">18</td>
+                    <td class="tg-j0tj">13</td>
+                    <td class="tg-j0tj">0</td>
+                    <td class="tg-j0tj">31</td>
+                </tr>
+                <tr>
+                    <td class="tg-yw4l">6</td>
+                    <td class="tg-yw4l">Prematurez</td>
+                    <td class="tg-baqh">13</td>
+                    <td class="tg-baqh">13</td>
+                    <td class="tg-baqh">1</td>
+                    <td class="tg-baqh">27</td>
+                </tr>
+                <tr>
+                    <td class="tg-6k2t">7</td>
+                    <td class="tg-6k2t">
+                        Infarto agudo del miocardio, sin otra especificacion
+                    </td>
+                    <td class="tg-j0tj">11</td>
+                    <td class="tg-j0tj">11</td>
+                    <td class="tg-j0tj">0</td>
+                    <td class="tg-j0tj">22</td>
+                </tr>
+                <tr>
+                    <td class="tg-yw4l">8</td>
+                    <td class="tg-yw4l">Traumatizmo intracraneal, no especificado</td>
+                    <td class="tg-baqh">20</td>
+                    <td class="tg-baqh">2</td>
+                    <td class="tg-baqh">0</td>
+                    <td class="tg-baqh">22</td>
+                </tr>
+                <tr>
+                    <td class="tg-6k2t">9</td>
+                    <td class="tg-6k2t">
+                        Trastornos mentales y del comportamiento debidos al uso de alcohol, sindrome
+                        <br />de dependencia
+                    </td>
+                    <td class="tg-j0tj">19</td>
+                    <td class="tg-j0tj">2</td>
+                    <td class="tg-j0tj">0</td>
+                    <td class="tg-j0tj">21</td>
+                </tr>
+                <tr>
+                    <td class="tg-yw4l">10</td>
+                    <td class="tg-yw4l">Hemorragia gastrointestinal, no especificada</td>
+                    <td class="tg-baqh">13</td>
+                    <td class="tg-baqh">6</td>
+                    <td class="tg-baqh">0</td>
+                    <td class="tg-baqh">19</td>
+                </tr>
+                <tr>
+                    <td class="tg-6k2t"></td>
+                    <td class="tg-6k2t">Subtotal</td>
+                    <td class="tg-j0tj">169</td>
+                    <td class="tg-j0tj">130</td>
+                    <td class="tg-j0tj">1</td>
+                    <td class="tg-j0tj">300</td>
+                </tr>
+                <tr>
+                    <td class="tg-yw4l"></td>
+                    <td class="tg-yw4l">Demás causas</td>
+                    <td class="tg-baqh">352</td>
+                    <td class="tg-baqh">275</td>
+                    <td class="tg-baqh">0</td>
+                    <td class="tg-baqh">627</td>
+                </tr>
+                <tr>
+                    <td class="tg-6k2t"></td>
+                    <td class="tg-6k2t">Totales</td>
+                    <td class="tg-j0tj">521</td>
+                    <td class="tg-j0tj">405</td>
+                    <td class="tg-j0tj">1</td>
+                    <td class="tg-j0tj">927</td>
+                </tr>
+            </table>
+        </div>
+        {% endblock %} {% block grafico %}
+        <div id="container"></div>
+        {% endblock %} {% block form %}
+        <br />
+        <form class="archivo" action="index.html" method="get" enctype="multipart/form-data">
+            <label for="sl">Seleccionar Archivo</label>
+            <input name="imagen" type="file" id="sl" />
+        </form>
+        {% endblock %} {% block vacio %} {% endblock %}
+    </div>
+    <script type="text/javascript" src="{% static 'core/js/jquery-1.9.1.js' %}"></script>
+    <script type="text/javascript" src="{% static 'core/js/script.js' %}"></script>
+    <script type="text/javascript" src="{% static 'core/js/bootstrap.js' %}"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-3d.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+</body>
+
+{% endblock %}

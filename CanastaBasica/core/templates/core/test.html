@@ -1,0 +1,53 @@
+{% extends 'core/base.html' %} {% load static %} {% block content %}
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}" media="screen" title="no title" charset="utf-8" />
+    <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}" />
+    <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}" />
+</head>
+
+<div class="info">
+    <br><br><br><br><br>
+    <label for="mes">Mes</label>
+    <select id="mes" name="Sexo">
+    <option value="option">Mujer</option>
+    <option value="option">Hombre</option>
+  </select>
+    <label for="anio" style="margin-left:5%;">Año</label>
+    <select id="anio" name="Mes">
+    <option value="option">Enero</option>
+    <option value="option">Febrero</option>
+    <option value="option">Marzo</option>
+    <option value="option">Abril</option>
+    <option value="option">Mayo</option>
+    <option value="option">Junio</option>
+    <option value="option">Julio</option>
+    <option value="option">Agosto</option>
+    <option value="option">Septiembre</option>
+    <option value="option">Octubre</option>
+    <option value="option">Noviembre</option>
+    <option value="option">Diciembre</option>
+  </select>
+    <br />
+    <br />
+    <br />
+    <label for="causa">Causa</label>
+    <input type="text" name="name" id="txtNumbers" style="width:200px;height:22px" maxlength="80" value="" />
+    <br />
+    <br />
+    <br />
+    <label for="">Cantidad</label>
+    <input type="text" name="name" class="txtNumbers" onkeypress="return justNumbers(event); " style="width:180px;height:22px" maxlength="20" value="" />
+    <label for="">Genero: </label>
+    <input type="radio" name="name" value="Hombre" checked="" />Hombre
+    <input type="radio" name="name" value="mujer" />Mujer
+    <br />
+    <br />
+    <br /> {% block botones %} <a href="#" class="myButton">Aceptar</a>
+    <a href="#" class="myButton">Eliminar</a>
+    <a href="#" class="myButton">Editar</a>
+    <a href="inicio" class="myButton">Cancelar</a>
+    <a href="inicio" class="myButton" style="margin-left:20%;">Terminar</a> {% endblock%}
+</div>
+{% endblock %}
