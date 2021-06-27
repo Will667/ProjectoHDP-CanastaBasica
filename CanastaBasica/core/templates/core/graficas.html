@@ -5,57 +5,292 @@
     <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}" media="screen" title="no title" charset="utf-8" />
     <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}" />
     <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}" />
+    <!--chartjs-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{% static 'core/css/all.min.css' %}">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{% static 'core/css/adminlte.min.css' %}">
 </head>
 
-<body>
-    <br />
-    <div class="main-content">
-        {% block obtener %}
-        <div class="obtener">
-            <figcaption id="legenda">Obtener informacion</figcaption>
-            <br />
-            <nav class="menu2">
-                <select class="obd" name="Anio">
-                    <option value="option">2015</option>
-                    <option value="option">2014</option>
-                </select>
-                <select class="obd" name="Sexo">
-                    <option value="option">Mujer</option>
-                    <option value="option">Hombre</option>
-                </select>
-                <select class="obd" name="Mes">
-                    <option value="option">Enero</option>
-                    <option value="option">Febrero</option>
-                    <option value="option">Marzo</option>
-                    <option value="option">Abril</option>
-                    <option value="option">Mayo</option>
-                    <option value="option">Junio</option>
-                    <option value="option">Julio</option>
-                    <option value="option">Agosto</option>
-                    <option value="option">Septiembre</option>
-                    <option value="option">Octubre</option>
-                    <option value="option">Noviembre</option>
-                    <option value="option">Diciembre</option>
-                </select>
-                <a href="#" class="myButton">Generar Reporte</a>
-            </nav>
-        </div>
-        {% endblock %} {% block grafico %}
-        <div id="container"></div>
-        {% endblock %} {% block form %}
-        <br />
-        <form class="archivo" action="index.html" method="get" enctype="multipart/form-data">
-            <label for="sl">Seleccionar Archivo</label>
-            <input name="imagen" type="file" id="sl" />
-        </form>
-        {% endblock %} {% block vacio %} {% endblock %}
-    </div>
-    <script type="text/javascript" src="{% static 'core/js/jquery-1.9.1.js' %}"></script>
-    <script type="text/javascript" src="{% static 'core/js/script.js' %}"></script>
-    <script type="text/javascript" src="{% static 'core/js/bootstrap.js' %}"></script>
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/highcharts-3d.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-</body>
+<body class="hold-transition sidebar-mini">
 
+    <div class="wrapper">
+        <!-- Content Wrapper. Contains page content -->
+        <!-- <div class="content-wrapper"> -->
+        <!-- Content Header (Page header) -->
+        <section class="content-header" style="margin-right: 15px;">
+            <div class="container-fluid">
+                <div class="row mb-4">
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">ChartJS</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <!-- /.container-fluid -->
+            <!-- </section> -->
+
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!-- AREA CHART -->
+                            <div class="card card-primary">
+                                <div class="card-header">
+                                    <h3 class="card-title">Promedio de precios por departamento</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart">
+                                        <canvas id="areaChart"
+                                            style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                                    </div>
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                            <!-- /.card -->
+
+                            <!-- DONUT CHART -->
+                            <div class="card card-danger">
+                                <div class="card-header">
+                                    <h3 class="card-title">Promedio canasta basica por departamento</h3>
+                                </div>
+                                <div class="card-body">
+                                    <canvas id="donutChart"
+                                        style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                            <!-- /.card -->
+                        </div>
+                        <!-- /.col (LEFT) -->
+                        <div class="col-md-6">
+                            <!-- LINE CHART -->
+                            <div class="card card-info">
+                                <div class="card-header">
+                                    <h3 class="card-title">Promedio de precios por producto</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart">
+                                        <canvas id="lineChart"
+                                            style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                                    </div>
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                            <!-- /.card -->
+
+                            <!-- BAR CHART -->
+                            <div class="card card-success">
+                                <div class="card-header">
+                                    <h3 class="card-title">Promedio mensual 2019-2021 (Datos de
+                                        http://www.digestyc.gob.sv)</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart">
+                                        <canvas id="barChart"
+                                            style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                                    </div>
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                            <!-- /.card -->
+                            <!-- /.col (RIGHT) -->
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.container-fluid -->
+                    <!-- </section> -->
+                    <!-- /.content -->
+                    <!-- </div> -->
+
+                    <!-- jQuery -->
+                    <script src="{% static 'core/js/jquery.min.js' %}"></script>
+                    <!-- Bootstrap 4 -->
+                    <script src="{% static 'core/js/bootstrap.bundle.min.js' %}"></script>
+                    <!-- ChartJS -->
+                    <script src="{% static 'core/vendor/chart.js/Chart.min.js' %}"></script>
+                    <!-- AdminLTE App -->
+                    <script src="{% static 'core/js/adminlte.min.js' %}"></script>
+                    <!-- AdminLTE for demo purposes -->
+                    <script src="{% static 'core/js/demo.js' %}"></script>
+                    <!-- Page specific script-->
+                    <script>
+                        $(function () {
+                            /* ChartJS*/
+                            // //--------------
+                            // //- AREA CHART -
+                            // //--------------
+
+                            // Get context with jQuery - using jQuery's .get() method.
+                            var areaChartCanvas = $('#areaChart').get(0).getContext('2d')
+
+                            var areaChartData = {
+                                labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+                                datasets: [{
+                                    label: '2019',
+                                    backgroundColor: 'rgba(60,141,188,0.9)',
+                                    borderColor: 'rgba(60,141,188,0.8)',
+                                    pointRadius: false,
+                                    pointColor: '#3b8bba',
+                                    pointStrokeColor: 'rgba(60,141,188,1)',
+                                    pointHighlightFill: '#fff',
+                                    pointHighlightStroke: 'rgba(60,141,188,1)',
+                                    data: [144.91, 143.90, 145.57, 144.04, 145.78, 144.43, 144.14, 145.35, 144.90, 145.96, 144.07, 141.23]
+                                }, {
+                                    label: '2020',
+                                    backgroundColor: 'rgba(210, 214, 222, 1)',
+                                    borderColor: 'rgba(210, 214, 222, 1)',
+                                    pointRadius: false,
+                                    pointColor: 'rgba(210, 214, 222, 1)',
+                                    pointStrokeColor: '#c1c7d1',
+                                    pointHighlightFill: '#fff',
+                                    pointHighlightStroke: 'rgba(210,214,222,1)',
+                                    data: [145.40, 145.86, 145.90, 141.96, 146.96, 151.81, 146.62, 145.04, 142.82, 138.76, 146.65, 141.63]
+                                }, {
+                                    label: '2021',
+                                    backgroundColor: 'rgba(10, 114, 22, 1)',
+                                    borderColor: 'rgba(10, 114, 22, 1)',
+                                    pointRadius: false,
+                                    pointColor: 'rgba(10, 114, 22, 1)',
+                                    pointStrokeColor: '#c4c7a1',
+                                    pointHighlightFill: '#fff',
+                                    pointHighlightStroke: 'rgba(10,114,22,1)',
+                                    data: [191.68, 143.67, 144.71, 143.77, 145.09, 143.78, 145.50, 145.04, 142.82, 141.63, 141.23, 144.91]
+                                }, {
+                                    label: '2022',
+                                    backgroundColor: 'rgba(0, 0, 0, 1)',
+                                    borderColor: 'rgba(100, 14, 22, 1)',
+                                    pointRadius: false,
+                                    pointColor: 'rgba(100, 14, 22, 1)',
+                                    pointStrokeColor: '#c1c2a1',
+                                    pointHighlightFill: '#fff',
+                                    pointHighlightStroke: 'rgba(100,14,22,1)',
+                                    data: [111.68, 143.67, 144.71, 143.77, 145.09, 143.78, 145.50, 145.04, 142.82, 141.63, 141.23, 144.91]
+                                }, {
+                                    label: '2023',
+                                    backgroundColor: 'rgba(110, 114, 122, 1)',
+                                    borderColor: 'rgba(0, 0, 0, 1)',
+                                    pointRadius: false,
+                                    pointColor: 'rgba(0, 0, 0, 1)',
+                                    pointStrokeColor: '#c1c7a2',
+                                    pointHighlightFill: '#000',
+                                    pointHighlightStroke: 'rgba(0,0,1,1)',
+                                    data: [101.68, 143.67, 144.71, 143.77, 145.09, 143.78, 145.50, 145.04, 142.82, 141.63, 141.23, 144.91]
+                                },]
+                            }
+
+                            var areaChartOptions = {
+                                maintainAspectRatio: false,
+                                responsive: true,
+                                legend: {
+                                    display: false
+                                },
+                                scales: {
+                                    xAxes: [{
+                                        gridLines: {
+                                            display: false,
+                                        }
+                                    }],
+                                    yAxes: [{
+                                        gridLines: {
+                                            display: false,
+                                        }
+                                    }]
+                                }
+                            }
+
+                            // This will get the first returned node in the jQuery collection.
+                            new Chart(areaChartCanvas, {
+                                type: 'line',
+                                data: areaChartData,
+                                options: areaChartOptions
+                            })
+
+                            //-------------
+                            //- LINE CHART -
+                            //--------------
+                            var lineChartCanvas = $('#lineChart').get(0).getContext('2d')
+                            var lineChartOptions = $.extend(true, {}, areaChartOptions)
+                            var lineChartData = $.extend(true, {}, areaChartData)
+                            lineChartData.datasets[0].fill = false;
+                            lineChartData.datasets[1].fill = false;
+
+                            lineChartOptions.datasetFill = false
+
+                            var lineChart = new Chart(lineChartCanvas, {
+                                type: 'line',
+                                data: lineChartData,
+                                options: lineChartOptions
+                            })
+
+                            //-------------
+                            //- DONUT CHART -
+                            //-------------
+                            // Get context with jQuery - using jQuery's .get() method.
+                            var donutChartCanvas = $('#donutChart').get(0).getContext('2d')
+                            var donutData = {
+                                labels: [
+                                    'Chrome',
+                                    'IE',
+                                    'FireFox',
+                                    'Safari',
+                                    'Opera',
+                                    'Navigator',
+                                ],
+                                datasets: [{
+                                    data: [700, 500, 400, 600, 300, 100],
+                                    backgroundColor: ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de'],
+                                }]
+                            }
+                            var donutOptions = {
+                                maintainAspectRatio: false,
+                                responsive: true,
+                            }
+                            //Create pie or douhnut chart
+                            // You can switch between pie and douhnut using the method below.
+                            new Chart(donutChartCanvas, {
+                                type: 'doughnut',
+                                data: donutData,
+                                options: donutOptions
+                            })
+                            //-------------
+                            //- BAR CHART -
+                            //-------------
+                            var barChartCanvas = $('#barChart').get(0).getContext('2d')
+                            var barChartData = $.extend(true, {}, areaChartData)
+                            var temp0 = areaChartData.datasets[0]
+                            var temp1 = areaChartData.datasets[1]
+                            var temp2 = areaChartData.datasets[2]
+                            var temp3 = areaChartData.datasets[3]
+                            var temp4 = areaChartData.datasets[4]
+                            barChartData.datasets[0] = temp4
+                            barChartData.datasets[1] = temp3
+                            barChartData.datasets[2] = temp2
+                            barChartData.datasets[3] = temp1
+                            barChartData.datasets[4] = temp0
+
+                            var barChartOptions = {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                datasetFill: false
+                            }
+
+                            new Chart(barChartCanvas, {
+                                type: 'bar',
+                                data: barChartData,
+                                options: barChartOptions
+                            })
+                        })
+                    </script>
+                    <script type="text/javascript" src="{% static 'core/js/jquery-1.9.1.js' %}"></script>
+                    <script type="text/javascript" src="{% static 'core/js/script.js' %}"></script>
+                    <script type="text/javascript" src="{% static 'core/js/bootstrap.js' %}"></script>
+</body>
 {% endblock %}

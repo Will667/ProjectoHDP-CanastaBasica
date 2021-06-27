@@ -1,0 +1,47 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+<br><br><br><br><br><br>
+
+<div class="card card-default">
+  <div class="card-header">
+    <h3 class="card-title">
+      <i class="fas fa-search"></i>
+    </h3>
+  </div>
+</div>
+<div class="card-body">
+  <table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Nro</th>
+            <th scope="col">Depa</th>
+            <th scope="col">Pro</th>
+            <th scope="col">Precio</th>
+          </tr>
+    </thead>
+    <tbody>
+      {% for c in encuestas %}
+        <tr>
+          <td>{{ c.id }}</td>
+          <td>{{ c.dep }}</td>
+          <td>{{ c.prod }}</td>
+          <td>{{ c.price }}</td>
+          <td>
+            <button type="button" class="btn btn-warning btn-xs btn-flat">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button type="button" class="btn btn-danger btn-xs btn-flat">
+              <i class="fas fa-trash-alt"></i>
+            </button>
+          </td>
+        </tr>
+        {% endfor%}
+    </tbody>
+  </table>
+
+</div>
+
+
+
+
