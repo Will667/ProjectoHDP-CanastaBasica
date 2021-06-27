@@ -1,0 +1,12 @@
+astroid @ file:///tmp/build/80754af9/astroid_1623156776728/work
+certifi==2021.5.30
+Django==2.2
+isort @ file:///tmp/build/80754af9/isort_1616355431277/work
+lazy-object-proxy @ file:///tmp/build/80754af9/lazy-object-proxy_1616526917483/work
+mccabe==0.6.1
+mysqlclient==2.0.3
+pylint @ file:///tmp/build/80754af9/pylint_1623394586326/work
+pytz==2021.1
+sqlparse==0.4.1
+toml @ file:///tmp/build/80754af9/toml_1616166611790/work
+wrapt==1.12.1
