@@ -1,47 +1,45 @@
 {% extends 'core/base.html' %}
-{% load static %}
+{% block content %}
+<head>
+  <title>Add Detalle de Venta | Django site admin</title>
+  <link rel="stylesheet" type="text/css" href="/static/admin/css/base.css" />
+  <link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css" />
 
-<br><br><br><br><br><br>
+  <script type="text/javascript" src="/admin/jsi18n/"></script>
+  <script type="text/javascript" src="/static/admin/js/vendor/jquery/jquery.js"></script>
+  <script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
+  <script type="text/javascript" src="/static/admin/js/core.js"></script>
+  <script type="text/javascript" src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
+  <script type="text/javascript" src="/static/admin/js/actions.js"></script>
+  <script type="text/javascript" src="/static/admin/js/urlify.js"></script>
+  <script type="text/javascript" src="/static/admin/js/prepopulate.js"></script>
+  <script type="text/javascript" src="/static/admin/js/vendor/xregexp/xregexp.js"></script>
 
-<div class="card card-default">
-  <div class="card-header">
-    <h3 class="card-title">
-      <i class="fas fa-search"></i>
-    </h3>
-  </div>
-</div>
-<div class="card-body">
-  <table class="table">
-    <thead>
-        <tr>
-            <th scope="col">Nro</th>
-            <th scope="col">Depa</th>
-            <th scope="col">Pro</th>
-            <th scope="col">Precio</th>
-          </tr>
-    </thead>
-    <tbody>
-      {% for c in encuestas %}
-        <tr>
-          <td>{{ c.id }}</td>
-          <td>{{ c.dep }}</td>
-          <td>{{ c.prod }}</td>
-          <td>{{ c.price }}</td>
-          <td>
-            <button type="button" class="btn btn-warning btn-xs btn-flat">
-              <i class="fas fa-edit"></i>
-            </button>
-            <button type="button" class="btn btn-danger btn-xs btn-flat">
-              <i class="fas fa-trash-alt"></i>
-            </button>
-          </td>
-        </tr>
-        {% endfor%}
-    </tbody>
-  </table>
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css" />
 
-</div>
+  <meta name="robots" content="NONE,NOARCHIVE" />
+</head>
 
+<br><br><br><br><br>
 
+  <form method="POST">
+          {% csrf_token %}
+          <div class="related-widget-wrapper">
+            <label class="required" for="id_dep">Departamento:</label>
+            {{ form.dep }}
+            <label class="required" for="id_dep">Municipio:</label>
+            {{ form.muni }}
+            <label class="required" for="id_dep">Producto:</label>
+            {{ form.prod }}
+            <label class="required" for="id_dep">Precio:</label>
+            {{ form.price }}  
+            <div class="submit-row" >
+              <button type="submit">Guardar</button>
+            </div>
+          </div>        
+  </form>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{% endblock %}
 
 

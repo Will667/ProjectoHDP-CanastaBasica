@@ -1,65 +1,713 @@
 {% extends 'core/base.html' %} {% load static %} {% block content %}
 
-<head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}" media="screen" title="no title" charset="utf-8" />
-    <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}" />
-    <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}" />
-</head>
+<body lang="en-us">
 
-<div class="info">
-    <br><br><br><br><br>
-    <label for="mes">Departamento</label>
-    <select id="mes" name="Sexo">
-    <option value="option">Ahuachapan</option>
-    <option value="option">Cabañas</option>
-    <option value="option">Chalantenango</option>
-    <option value="option">Cuscatlan</option>
-    <option value="option">La Libertad</option>
-    <option value="option">La Paz</option>
-    <option value="option">La Union</option>
-    <option value="option">Morazan</option>
-    <option value="option">San Miguel</option>
-    <option value="option">San Salvador</option>
-    <option value="option">San Vicente</option>
-    <option value="option">Santa Ana</option>
-    <option value="option">Sonsonate</option>
-    <option value="option">Usulutan</option>
-  </select>
-    <label for="anio" style="margin-left:5%;">Año</label>
-    <select id="anio" name="Mes">
-    <option value="option">Enero</option>
-    <option value="option">Febrero</option>
-    <option value="option">Marzo</option>
-    <option value="option">Abril</option>
-    <option value="option">Mayo</option>
-    <option value="option">Junio</option>
-    <option value="option">Julio</option>
-    <option value="option">Agosto</option>
-    <option value="option">Septiembre</option>
-    <option value="option">Octubre</option>
-    <option value="option">Noviembre</option>
-    <option value="option">Diciembre</option>
-  </select>
-    <br />
-    <br />
-    <br />
-    <label for="causa">Causa</label>
-    <input type="text" name="name" id="txtNumbers" style="width:200px;height:22px" maxlength="80" value="" />
-    <br />
-    <br />
-    <br />
-    <label for="">Cantidad</label>
-    <input type="text" name="name" class="txtNumbers" onkeypress="return justNumbers(event); " style="width:180px;height:22px" maxlength="20" value="" />
-    <label for="">Genero: </label>
-    <input type="radio" name="name" value="Hombre" checked="" />Hombre
-    <input type="radio" name="name" value="mujer" />Mujer
-    <br />
-    <br />
-    <br /> {% block botones %} <a href="#" class="myButton">Aceptar</a>
-    <a href="#" class="myButton">Eliminar</a>
-    <a href="#" class="myButton">Editar</a>
-    <a href="inicio" class="myButton">Cancelar</a>
-    <a href="inicio" class="myButton" style="margin-left:20%;">Terminar</a> {% endblock%}
-</div>
+    <head>
+        <title>Add Detalle de Venta | Django site admin</title>
+        <link rel="stylesheet" type="text/css" href="/static/admin/css/base.css" />
+        <link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css" />
+
+        <script type="text/javascript" src="/admin/jsi18n/"></script>
+        <script type="text/javascript" src="/static/admin/js/vendor/jquery/jquery.js"></script>
+        <script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
+        <script type="text/javascript" src="/static/admin/js/core.js"></script>
+        <script type="text/javascript" src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
+        <script type="text/javascript" src="/static/admin/js/actions.js"></script>
+        <script type="text/javascript" src="/static/admin/js/urlify.js"></script>
+        <script type="text/javascript" src="/static/admin/js/prepopulate.js"></script>
+        <script type="text/javascript" src="/static/admin/js/vendor/xregexp/xregexp.js"></script>
+
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css" />
+
+        <meta name="robots" content="NONE,NOARCHIVE" />
+    </head>
+
+    <body class=" app-core model-detsale change-form" data-admin-utc-offset="0">
+        <!-- Container -->
+        <div id="container">
+            <!-- Content -->
+            <div id="content" class="colM">
+                <h1>Add Detalle de Venta</h1>
+                <div id="content-main">
+                    <form action="" method="POST" id="detsale_form" novalidate="">
+                        <input type="hidden" name="csrfmiddlewaretoken"
+                            value="El7bSmqiq4lARrdJDo0bkZA5FjTUy023rCzS3ZHqtjHAFygbjWvx4QGAG5PquN9D" />
+                        <div>
+                            <fieldset class="module aligned ">
+                                <div class="form-row field-dep">
+                                    <div>
+                                        <label class="required" for="id_dep">Dep:</label>
+
+                                        <div class="related-widget-wrapper">
+                                            <select name="dep" required="" id="id_dep">
+                                                <option value="" selected="">---------</option>
+
+                                                <option value="1">Ahuchapan</option>
+
+                                                <option value="2">Cabañas</option>
+
+                                                <option value="3">Chalantenango</option>
+
+                                                <option value="4">Cuscatlan</option>
+
+                                                <option value="5">La Libertad</option>
+
+                                                <option value="6">La Paz</option>
+
+                                                <option value="7">La Union</option>
+
+                                                <option value="8">Morazan</option>
+
+                                                <option value="9">San Miguel</option>
+
+                                                <option value="10">San Salvador</option>
+
+                                                <option value="11">San Vicente</option>
+
+                                                <option value="12">Santa Ana</option>
+
+                                                <option value="13">Sonsonate</option>
+
+                                                <option value="14">Usulutan</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row field-muni">
+                                    <div>
+                                        <label class="required" for="id_muni">Muni:</label>
+
+                                        <div class="related-widget-wrapper">
+                                            <select name="muni" required="" id="id_muni">
+                                                <option value="" selected="">---------</option>
+
+                                                <option value="20">Ahuachapan</option>
+
+                                                <option value="21">Apaneca</option>
+
+                                                <option value="22">Atiquizaya</option>
+
+                                                <option value="23">Concepción de Ataco</option>
+
+                                                <option value="24">El Refugio</option>
+
+                                                <option value="25">Guaymango</option>
+
+                                                <option value="26">Jujutla</option>
+
+                                                <option value="27">San Francisco Menéndez</option>
+
+                                                <option value="28">San Lorenzo</option>
+
+                                                <option value="29">San Pedro Puxtla</option>
+
+                                                <option value="30">Tacuba</option>
+
+                                                <option value="31">Turín</option>
+
+                                                <option value="32">Sensuntepeque</option>
+
+                                                <option value="33">Cinquera</option>
+
+                                                <option value="34">Dolores</option>
+
+                                                <option value="35">Guacotecti</option>
+
+                                                <option value="36">Ilobasco</option>
+
+                                                <option value="37">Jutiapa</option>
+
+                                                <option value="38">San Isidro</option>
+
+                                                <option value="39">Tejutepeque</option>
+
+                                                <option value="40">Victoria</option>
+
+                                                <option value="41">Chalatenango</option>
+
+                                                <option value="42">Agua Caliente</option>
+
+                                                <option value="43">Arcatao</option>
+
+                                                <option value="44">Azacualpa</option>
+
+                                                <option value="45">Cancasque</option>
+
+                                                <option value="46">Citalá</option>
+
+                                                <option value="47">Comalapa</option>
+
+                                                <option value="48">Concepción Quezaltepeque</option>
+
+                                                <option value="49">Dulce Nombre de María</option>
+
+                                                <option value="50">El Carrizal</option>
+
+                                                <option value="51">El Paraíso</option>
+
+                                                <option value="52">La Laguna</option>
+
+                                                <option value="53">La Palma</option>
+
+                                                <option value="54">La Reina</option>
+
+                                                <option value="55">Las Flores</option>
+
+                                                <option value="56">Las Vueltas</option>
+
+                                                <option value="57">Nombre de Jesús</option>
+
+                                                <option value="58">Nueva Concepción</option>
+
+                                                <option value="59">Nueva Trinidad</option>
+
+                                                <option value="60">Ojos de Agua</option>
+
+                                                <option value="61">Potonico</option>
+
+                                                <option value="62">San Antonio de la Cruz</option>
+
+                                                <option value="63">San Antonio Los Ranchos</option>
+
+                                                <option value="64">San Fernando</option>
+
+                                                <option value="65">San Francisco Lempa</option>
+
+                                                <option value="66">San Francisco Morazán</option>
+
+                                                <option value="67">San Ignacio</option>
+
+                                                <option value="68">San Isidro Labrador</option>
+
+                                                <option value="69">San Luis del Carmen</option>
+
+                                                <option value="70">San Miguel de Mercedes</option>
+
+                                                <option value="71">San Rafael</option>
+
+                                                <option value="72">Santa Rita</option>
+
+                                                <option value="73">Tejutla</option>
+
+                                                <option value="74">Cojutepeque</option>
+
+                                                <option value="75">Candelaria</option>
+
+                                                <option value="76">El Carmen</option>
+
+                                                <option value="77">El Rosario</option>
+
+                                                <option value="78">Monte San Juan</option>
+
+                                                <option value="79">Oratorio de Concepción</option>
+
+                                                <option value="80">San Bartolomé Perulapía</option>
+
+                                                <option value="81">San Cristóbal</option>
+
+                                                <option value="82">San José Guayabal</option>
+
+                                                <option value="83">San Pedro Perulapán</option>
+
+                                                <option value="84">San Rafael Cedros</option>
+
+                                                <option value="85">San Ramón</option>
+
+                                                <option value="86">Santa Cruz Analquito</option>
+
+                                                <option value="87">Santa Cruz Michapa</option>
+
+                                                <option value="88">Suchitoto</option>
+
+                                                <option value="89">Tenancingo</option>
+
+                                                <option value="90">Santa Tecla</option>
+
+                                                <option value="91">Antiguo Cuscatlán</option>
+
+                                                <option value="92">Chiltiupán</option>
+
+                                                <option value="93">Ciudad Arce</option>
+
+                                                <option value="94">Colón</option>
+
+                                                <option value="95">Comasagua</option>
+
+                                                <option value="96">Huizúcar</option>
+
+                                                <option value="97">Jayaque</option>
+
+                                                <option value="98">Jicalapa</option>
+
+                                                <option value="99">La Libertad</option>
+
+                                                <option value="100">Nuevo Cuscatlán</option>
+
+                                                <option value="101">Quezaltepeque</option>
+
+                                                <option value="102">San Juan Opico</option>
+
+                                                <option value="103">Sacacoyo</option>
+
+                                                <option value="104">San José Villanueva</option>
+
+                                                <option value="105">San Matías</option>
+
+                                                <option value="106">San Pablo Tacachico</option>
+
+                                                <option value="107">Talnique</option>
+
+                                                <option value="108">Tamanique</option>
+
+                                                <option value="109">Teotepeque</option>
+
+                                                <option value="110">Tepecoyo</option>
+
+                                                <option value="111">Zaragoza</option>
+
+                                                <option value="112">Zacatecoluca</option>
+
+                                                <option value="113">Cuyultitán</option>
+
+                                                <option value="114">El Rosario (la paz)</option>
+
+                                                <option value="115">Jerusalén</option>
+
+                                                <option value="116">Mercedes La Ceiba</option>
+
+                                                <option value="117">Olocuilta</option>
+
+                                                <option value="118">Paraíso de Osorio</option>
+
+                                                <option value="119">San Antonio Masahuat</option>
+
+                                                <option value="120">San Emigdio</option>
+
+                                                <option value="121">San Francisco Chinameca</option>
+
+                                                <option value="122">San Pedro Masahuat</option>
+
+                                                <option value="123">San Juan Nonualco</option>
+
+                                                <option value="124">San Juan Talpa</option>
+
+                                                <option value="125">San Juan Tepezontes</option>
+
+                                                <option value="126">San Luis La Herradura</option>
+
+                                                <option value="127">San Luis Talpa</option>
+
+                                                <option value="128">San Miguel Tepezontes</option>
+
+                                                <option value="129">San Pedro Nonualco</option>
+
+                                                <option value="130">San Rafael Obrajuelo</option>
+
+                                                <option value="131">Santa María Ostuma</option>
+
+                                                <option value="132">Santiago Nonualco</option>
+
+                                                <option value="133">Tapalhuaca</option>
+
+                                                <option value="134">La Unión</option>
+
+                                                <option value="135">Anamorós</option>
+
+                                                <option value="136">Bolívar</option>
+
+                                                <option value="137">Concepción de Oriente</option>
+
+                                                <option value="138">Conchagua</option>
+
+                                                <option value="139">El Carmen(La Unión)</option>
+
+                                                <option value="140">El Sauce</option>
+
+                                                <option value="141">Intipucá</option>
+
+                                                <option value="142">Lislique</option>
+
+                                                <option value="143">Meanguera del Golfo</option>
+
+                                                <option value="144">Nueva Esparta</option>
+
+                                                <option value="145">Pasaquina</option>
+
+                                                <option value="146">Polorós</option>
+
+                                                <option value="147">San Alejo</option>
+
+                                                <option value="148">San José</option>
+
+                                                <option value="149">Santa Rosa de Lima</option>
+
+                                                <option value="150">Yayantique</option>
+
+                                                <option value="151">Yucuaiquín</option>
+
+                                                <option value="152">San Francisco Gotera</option>
+
+                                                <option value="153">Arambala</option>
+
+                                                <option value="154">Cacaopera</option>
+
+                                                <option value="155">Chilanga</option>
+
+                                                <option value="156">Corinto</option>
+
+                                                <option value="157">Delicias de Concepción</option>
+
+                                                <option value="158">El Divisadero</option>
+
+                                                <option value="159">El Rosario(Morazan)</option>
+
+                                                <option value="160">Gualococti</option>
+
+                                                <option value="161">Guatajiagua</option>
+
+                                                <option value="162">Joateca</option>
+
+                                                <option value="163">Jocoaitique</option>
+
+                                                <option value="164">Jocoro</option>
+
+                                                <option value="165">Lolotiquillo</option>
+
+                                                <option value="166">Meanguera</option>
+
+                                                <option value="167">Osicala</option>
+
+                                                <option value="168">Perquín</option>
+
+                                                <option value="169">San Carlos</option>
+
+                                                <option value="170">San Fernando(Morazan)</option>
+
+                                                <option value="171">San Isidro(Morazan)</option>
+
+                                                <option value="172">San Simón</option>
+
+                                                <option value="173">Sensembra</option>
+
+                                                <option value="174">Sociedad</option>
+
+                                                <option value="175">Torola</option>
+
+                                                <option value="176">Yamabal</option>
+
+                                                <option value="177">Yoloaiquín</option>
+
+                                                <option value="178">San Miguel</option>
+
+                                                <option value="179">Carolina</option>
+
+                                                <option value="180">Chapeltique</option>
+
+                                                <option value="181">Chinameca</option>
+
+                                                <option value="182">Chirilagua</option>
+
+                                                <option value="183">Ciudad Barrios</option>
+
+                                                <option value="184">Comacarán</option>
+
+                                                <option value="185">El Tránsito</option>
+
+                                                <option value="186">Lolotique</option>
+
+                                                <option value="187">Moncagua</option>
+
+                                                <option value="188">Nueva Guadalupe</option>
+
+                                                <option value="189">Nuevo Edén de San Juan</option>
+
+                                                <option value="190">Quelepa</option>
+
+                                                <option value="191">San Antonio</option>
+
+                                                <option value="192">San Gerardo</option>
+
+                                                <option value="193">San Jorge</option>
+
+                                                <option value="194">San Luis de la Reina</option>
+
+                                                <option value="195">San Rafael Oriente</option>
+
+                                                <option value="196">Sesori</option>
+
+                                                <option value="197">Uluazapa</option>
+
+                                                <option value="198">San Salvador</option>
+
+                                                <option value="199">Aguilares</option>
+
+                                                <option value="200">Apopa</option>
+
+                                                <option value="201">Ayutuxtepeque</option>
+
+                                                <option value="202">Ciudad Delgado</option>
+
+                                                <option value="203">Cuscatancingo</option>
+
+                                                <option value="204">El Paisnal</option>
+
+                                                <option value="205">Guazapa</option>
+
+                                                <option value="206">Ilopango</option>
+
+                                                <option value="207">Mejicanos</option>
+
+                                                <option value="208">Nejapa</option>
+
+                                                <option value="209">Panchimalco</option>
+
+                                                <option value="210">Rosario de Mora</option>
+
+                                                <option value="211">San Marcos</option>
+
+                                                <option value="212">San Martín</option>
+
+                                                <option value="213">Santiago Texacuangos</option>
+
+                                                <option value="214">Santo Tomás</option>
+
+                                                <option value="215">Soyapango</option>
+
+                                                <option value="216">Tonacatepeque</option>
+
+                                                <option value="217">San Vicente</option>
+
+                                                <option value="218">Apastepeque</option>
+
+                                                <option value="219">Guadalupe</option>
+
+                                                <option value="220">San Cayetano Istepeque</option>
+
+                                                <option value="221">San Esteban Catarina</option>
+
+                                                <option value="222">San Ildefonso</option>
+
+                                                <option value="223">San Lorenzo(San Vicente)</option>
+
+                                                <option value="224">San Sebastián</option>
+
+                                                <option value="225">Santa Clara</option>
+
+                                                <option value="226">Santo Domingo</option>
+
+                                                <option value="227">Tecoluca</option>
+
+                                                <option value="228">Tepetitán</option>
+
+                                                <option value="229">Verapaz</option>
+
+                                                <option value="230">Santa Ana</option>
+
+                                                <option value="231">Candelaria de la Frontera</option>
+
+                                                <option value="232">Chalchuapa</option>
+
+                                                <option value="233">Coatepeque</option>
+
+                                                <option value="234">El Congo</option>
+
+                                                <option value="235">El Porvenir</option>
+
+                                                <option value="236">Masahuat</option>
+
+                                                <option value="237">Metapán</option>
+
+                                                <option value="238">San Antonio Pajonal</option>
+
+                                                <option value="239">San Sebastián Salitrillo</option>
+
+                                                <option value="240">Santa Rosa Guachipilín</option>
+
+                                                <option value="241">Santiago de la Frontera</option>
+
+                                                <option value="242">Texistepeque</option>
+
+                                                <option value="243">Sonsonate</option>
+
+                                                <option value="244">Acajutla</option>
+
+                                                <option value="245">Armenia</option>
+
+                                                <option value="246">Caluco</option>
+
+                                                <option value="247">Cuisnahuat</option>
+
+                                                <option value="248">Izalco</option>
+
+                                                <option value="249">Juayúa</option>
+
+                                                <option value="250">Nahuizalco</option>
+
+                                                <option value="251">Nahulingo</option>
+
+                                                <option value="252">Salcoatitán</option>
+
+                                                <option value="253">San Antonio del Monte</option>
+
+                                                <option value="254">San Julián</option>
+
+                                                <option value="255">Santa Catarina Masahuat</option>
+
+                                                <option value="256">Santa Isabel Ishuatán</option>
+
+                                                <option value="257">Santo Domingo de Guzmán</option>
+
+                                                <option value="258">Sonzacate</option>
+
+                                                <option value="259">Usulután</option>
+
+                                                <option value="260">Alegría</option>
+
+                                                <option value="261">Berlín</option>
+
+                                                <option value="262">California</option>
+
+                                                <option value="263">Concepción Batres</option>
+
+                                                <option value="264">El Triunfo</option>
+
+                                                <option value="265">Ereguayquín</option>
+
+                                                <option value="266">Estanzuelas</option>
+
+                                                <option value="267">Jiquilisco</option>
+
+                                                <option value="268">Jucuapa</option>
+
+                                                <option value="269">Jucuarán</option>
+
+                                                <option value="270">Mercedes Umaña</option>
+
+                                                <option value="271">Nueva Granada</option>
+
+                                                <option value="272">Ozatlán</option>
+
+                                                <option value="273">Puerto El Triunfo</option>
+
+                                                <option value="274">San Agustín</option>
+
+                                                <option value="275">San Buenaventura</option>
+
+                                                <option value="276">San Dionisio</option>
+
+                                                <option value="277">San Francisco Javier</option>
+
+                                                <option value="278">Santa Elena</option>
+
+                                                <option value="279">Santa María</option>
+
+                                                <option value="280">Santiago de María</option>
+
+                                                <option value="281">Tecapán</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row field-prod">
+                                    <div>
+                                        <label class="required" for="id_prod">Prod:</label>
+
+                                        <div class="related-widget-wrapper">
+                                            <select name="prod" required="" id="id_prod">
+                                                <option value="" selected="">---------</option>
+
+                                                <option value="1">Tortillas</option>
+
+                                                <option value="2">Pan Frances</option>
+
+                                                <option value="3">Arroz</option>
+
+                                                <option value="4">Carnes 1_ /</option>
+
+                                                <option value="5">Grasas 2 _ /</option>
+
+                                                <option value="6">Huevos</option>
+
+                                                <option value="7">Leche Fluida *</option>
+
+                                                <option value="8">Frutas 3_ /</option>
+
+                                                <option value="9">Frijoles</option>
+
+                                                <option value="10">Azúcar</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row field-price">
+                                    <div>
+                                        <label class="required" for="id_price">Price:</label>
+
+                                        <input type="number" name="price" value="0.0" step="0.1" required=""
+                                            id="id_price" />
+                                    </div>
+                                </div>
+
+                            </fieldset>
+                            <div class="submit-row">
+                                <input type="submit" value="Save" class="default" name="_save" />
+                            </div>
+                            <!-- <script type="text/javascript" id="django-admin-form-add-constants"
+                                src="/static/admin/js/change_form.js" data-model-name="detsale"></script>
+                            <script type="text/javascript" id="django-admin-prepopulated-fields-constants"
+                                src="/static/admin/js/prepopulate_init.js" data-prepopulated-fields="[]"></script> -->
+                            <script src="{% static 'core/vendor/jquery/jquery.min.js' %} "></script>
+                        </div>
+                    </form>
+                </div>
+                <br class="clear" />
+            </div>
+            <!-- END Content -->
+
+            <!-- Lista de datos ingresados-->
+            <div class="card card-default">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        <i class="fas fa-search"></i>
+                    </h3>
+                </div>
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nro</th>
+                            <th scope="col">Departamento</th>
+                            <th scope="col">Municipio</th>
+                            <th scope="col">Producto</th>
+                            <th scope="col">Precio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for encuesta in encuestas %}
+                        <tr>
+                            <td>{{encuesta.id}}</td>
+                            <td>{{encuesta.dep}}</td>
+                            <td>{{encuesta.muni}}</td>
+                            <td>{{encuesta.prod}}</td>
+                            <td>{{encuesta.price}}</td>
+                        </tr>
+                        {% endfor%}
+
+                    </tbody>
+                </table>
+
+            </div>
+            <!-- Fin Lista de datos ingresados-->
+
+
+            <div id="footer"></div>
+        </div>
+        <!-- END Container -->
+    </body>
+</body>
 {% endblock %}

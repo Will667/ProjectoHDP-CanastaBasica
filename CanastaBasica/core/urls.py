@@ -1,6 +1,6 @@
 from django.urls import path
 from.import views
-from core.views import encuesta_list
+from core.views import *
 
 
 
@@ -12,8 +12,8 @@ urlpatterns = [
     path('test', views.test, name="test"), #depurar
     path('graficas', views.graficas, name="graficas"),
     path('tablas', views.tablas, name="tablas"),
-    path('edicion', views.edicion, name="edicion"),
-    # path('base', views.base, name="base"),
-
-    path('list', encuesta_list, name='encuesta_list'),
+    path('lista', views.test_view, name="lista"),
+    
+    path('testlist', test_list, name='test_list'),
+    path('list', test_view, name='test_view'),
 ]

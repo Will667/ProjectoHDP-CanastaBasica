@@ -1,7 +1,11 @@
-from django.shortcuts import render
+from django.forms.forms import Form
+from django.shortcuts import redirect, render
 from django.views.generic.list import ListView
+from django.http import HttpResponse
 from django.urls import reverse, reverse_lazy
-from core.models import Encuest
+
+from .models import Departaments, Encuest
+from .forms import EncuestForm
 # Create your views here.
 
 def home(request):
@@ -19,15 +23,21 @@ def test(request):
 def tablas(request):
     return render(request, "core/tablas.html")    
 
-def edicion(request):
-    return render(request, "core/edicion.html") 
-
-# def base(request):
-#     return render(request, "core/base.html")
-
-def encuesta_list(request):
+def test_list(request):
     data = {
         'title': 'Listado',
         'encuestas': Encuest.objects.all()
     }
-    return render(request, 'core/list.html', data)
+    return render(request, 'core/testlist.html', data)
+
+def test_view(request):
+    if request.method == 'POST':
+        form = EncuestForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('lista')
+    else:
+        form = EncuestForm()
+    
+    return render(request, 'core/list.html', {'form':form})
+

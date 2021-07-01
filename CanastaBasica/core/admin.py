@@ -4,3 +4,4 @@ from core.models import *
 admin.site.register(Encuest)
 admin.site.register(Product)
 admin.site.register(Departaments)
+admin.site.register(Municipio)
