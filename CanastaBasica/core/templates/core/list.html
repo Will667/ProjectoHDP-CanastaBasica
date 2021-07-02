@@ -21,8 +21,11 @@
   <meta name="robots" content="NONE,NOARCHIVE" />
 </head>
 
-<br><br><br><br><br>
+<br><br><br><br>
 
+<h2>Por favor ingrese los datos en base a lo que gasta por persona.</h2>   
+<h2>Las cantidades de los productos se toman en libras</h2>
+<br>
   <form method="POST">
           {% csrf_token %}
           <div class="related-widget-wrapper">
@@ -37,8 +40,9 @@
             <div class="submit-row" >
               <button type="submit">Guardar</button>
             </div>
-          </div>        
+          </div>     
   </form>
+
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 {% endblock %}
 

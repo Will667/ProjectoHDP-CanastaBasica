@@ -41,3 +41,17 @@ def test_view(request):
     
     return render(request, 'core/list.html', {'form':form})
 
+def login(request):
+    if request.method == 'POST':
+        username = request.POST.get('username', None)
+        password = request.POST.get('password', None)
+        user = authenticate(username=username, password=password)
+        if user:
+            auth.login(request, user)
+            return render(request, 'lista')
+        else:
+            valor = "*Ingrese usuario valido o contraseña correcta"
+            contex = {'valor': valor}
+            return render (request, 'core/login.html', context)
+    contex = {}
+    return render(request, 'core/login.html')

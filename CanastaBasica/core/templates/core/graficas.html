@@ -145,27 +145,7 @@
                                     pointStrokeColor: '#c4c7a1',
                                     pointHighlightFill: '#fff',
                                     pointHighlightStroke: 'rgba(10,114,22,1)',
-                                    data: [191.68, 143.67, 144.71, 143.77, 145.09, 143.78, 145.50, 145.04, 142.82, 141.63, 141.23, 144.91]
-                                }, {
-                                    label: '2022',
-                                    backgroundColor: 'rgba(0, 0, 0, 1)',
-                                    borderColor: 'rgba(100, 14, 22, 1)',
-                                    pointRadius: false,
-                                    pointColor: 'rgba(100, 14, 22, 1)',
-                                    pointStrokeColor: '#c1c2a1',
-                                    pointHighlightFill: '#fff',
-                                    pointHighlightStroke: 'rgba(100,14,22,1)',
-                                    data: [111.68, 143.67, 144.71, 143.77, 145.09, 143.78, 145.50, 145.04, 142.82, 141.63, 141.23, 144.91]
-                                }, {
-                                    label: '2023',
-                                    backgroundColor: 'rgba(110, 114, 122, 1)',
-                                    borderColor: 'rgba(0, 0, 0, 1)',
-                                    pointRadius: false,
-                                    pointColor: 'rgba(0, 0, 0, 1)',
-                                    pointStrokeColor: '#c1c7a2',
-                                    pointHighlightFill: '#000',
-                                    pointHighlightStroke: 'rgba(0,0,1,1)',
-                                    data: [101.68, 143.67, 144.71, 143.77, 145.09, 143.78, 145.50, 145.04, 142.82, 141.63, 141.23, 144.91]
+                                    data: [141.68, 143.67, 144.71, 143.77, 145.09, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00]
                                 },]
                             }
 
@@ -220,16 +200,21 @@
                             var donutChartCanvas = $('#donutChart').get(0).getContext('2d')
                             var donutData = {
                                 labels: [
-                                    'Chrome',
-                                    'IE',
-                                    'FireFox',
-                                    'Safari',
-                                    'Opera',
-                                    'Navigator',
+                                    'Tortillas',
+                                    'Carnes',
+                                    'Huevos',
+                                    'Fruta',
+                                    'Leche',
+                                    'Frijoles',
+                                    'Azucar',
+                                    'Pan Frances',
+                                    'Grasas',
+                                    'Arroz'
+
                                 ],
                                 datasets: [{
-                                    data: [700, 500, 400, 600, 300, 100],
-                                    backgroundColor: ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de'],
+                                    data: [700, 500, 400, 600, 300, 100,200,150,400,300],
+                                    backgroundColor: ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de','#000000', '#00c7df', '#3c6dcc', '#c2d4de'],
                                 }]
                             }
                             var donutOptions = {
@@ -251,13 +236,9 @@
                             var temp0 = areaChartData.datasets[0]
                             var temp1 = areaChartData.datasets[1]
                             var temp2 = areaChartData.datasets[2]
-                            var temp3 = areaChartData.datasets[3]
-                            var temp4 = areaChartData.datasets[4]
-                            barChartData.datasets[0] = temp4
-                            barChartData.datasets[1] = temp3
-                            barChartData.datasets[2] = temp2
-                            barChartData.datasets[3] = temp1
-                            barChartData.datasets[4] = temp0
+                            barChartData.datasets[0] = temp2
+                            barChartData.datasets[2] = temp1
+                            barChartData.datasets[1] = temp0
 
                             var barChartOptions = {
                                 responsive: true,
